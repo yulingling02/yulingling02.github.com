@@ -86,7 +86,19 @@ function getByClass(obj,sClass){
 	}
 }
 
-
+/*封装ready函数*/
+function addReady(fn){
+	if(document.addEventListener){
+		document.addEventListener('DOMContentLoaded', fn, false);
+	}
+	else{
+		document.attachEvent('onreadystatechange', function (){
+			if(document.readyState=='complete'){
+				fn();
+			}
+		});
+	}
+}
 
 
 

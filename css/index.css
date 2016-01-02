@@ -3,21 +3,25 @@
 body{}
 
 
-			/*hearer*/
-.nav_bg{ position:fixed;width:100%;height:55px; background:url(../images/nav_bg.png) repeat-x; z-index:5; overflow:hidden;}
-.nav_bg .header{width:85%; margin:0 auto;height:55px;}
+			/***hearer****/
+.nav_bg{ position:fixed;width:100%;height:55px; background:url(../images/bg6_btn.jpg) repeat-x left top; z-index:100; overflow:hidden;}
+.nav_bg .nav_bg_left{ position:fixed;width:2px;height:55px;background:url(../images/bg6_l_c_r.jpg) no-repeat left top; z-index:6;}
+.nav_bg .nav_bg_right{ position:fixed;width:2px;height:55px;background:url(../images/bg6_l_c_r.jpg) no-repeat left -55px; z-index:5;}
+.nav_bg .nav_right em{display:block; float:left;background:url(../images/bg6_l_c_r.jpg) no-repeat left -110px;width:2px;height:52px;}
+.nav_bg .header{width:85%; margin:0 auto;height:52px; padding-top:2px;}
 .header .nav_right{width:65%; height:100%; text-align:center; line-height:55px;}
-.header .nav_right a{ float:left;padding: 0 25px;height:100%; font-size:20px; color:#fff; font-weight:400;}
-.header .nav_right a:hover{ background:pink;}
+.header .nav_right a{ float:left;padding: 0 25px;height:52px; font-size:20px; color:#fff; font-weight:400;}
+.header .nav_right a:hover{ background:url(../images/bg6_btn.jpg) left bottom repeat-x;}
 .nav_right a span {
 	position: relative;
 	display: inline-block;
+	height:52px;
 	-webkit-transition: -webkit-transform 0.3s;
 	-moz-transition: -moz-transform 0.3s;
 	transition: transform 0.3s;
 }
 
-.nav_right a span::before {
+.nav_right a span:before {
 	position: absolute;
 	top: 100%;
 	content: attr(data-hover);
@@ -32,32 +36,54 @@ body{}
 	-moz-transform: translateY(-100%);
 	transform: translateY(-100%);
 }
-/*home*/
+/*home page1*/
 
-.content .page{ position:relative;overflow:hidden; background:url(../images/home3.jpg); background-position:center center; background-size:cover;}
+.content .page{ position:relative;overflow:hidden; background:url(../images/hone_bg.png); background-position:center center; background-size:cover;}
+
+.content .page .banner{ position:absolute; left:50%; margin-left:-410px;top:50%; margin-top:-160px;width:820px; height:400px; z-index:10;}
+.content .page .banner .banner_list{ position:relative; width:715px; height:322px; margin:0 auto; }
+.banner .banner_list .list_app{ position:absolute; left:50%; height:100%;}
+.banner .banner_list .list_app li{ float:left;width:40px; height:40px; border-radius:10px; line-height:40px; text-align:center; font-size:30px; font-weight:bold; color:#fff; margin:5px; box-shadow:1 10px 60px rgba(218,236,217,0.7); opacity:0;}
+.banner .banner_list .list_app li.active0{/* position:absolute; left:5px; top:5px; margin:0;*/ transform:scale(1);  border: 5px solid #3ba938;box-shadow:1 10px 60px rgba(218,236,217,0.7);}
+.banner .banner_list .list_app li.active1{border: 5px solid #FE5C0C;transform:scale(1);box-shadow:1 10px 60px rgba(218,236,217,0.7);}
+.banner .banner_list .list_app li.active2{border: 5px solid #1D66D5;transform:scale(1);box-shadow:1 10px 60px rgba(218,236,217,0.7);}
+.banner .banner_list .list_app li.active3{border: 5px solid #FE5C0C;transform:scale(1);box-shadow:1 10px 60px rgba(218,236,217,0.7);}
+.banner .banner_list .list_app li.active4{border: 5px solid #1D66D5;transform:scale(1);box-shadow:1 10px 60px rgba(218,236,217,0.7);}
+.banner .banner_list #startBtn{ position:absolute;top:calc(50% - 10px); left:calc(50% - 30px);width:60px; height:60px;border-radius:10px; font-size:30px; color:#fff; border:3px solid #ccc; background:none; box-shadow:inset 0px 0px 5px #fff,0px 10px 60px rgba(245,205,97,0.7); outline:none; z-index:3; transition:1s all ease}
+.banner .banner_list #startBtn:hover{transform:rotate(360deg) scale(1.5); cursor: pointer; border-radius: 50%;color:#e37c00;}
+
+
 .content .page .page1{position:absolute; left:0; top:0; width:100%;height:100%}
-.content .page .page1 li{float: left;height:100%; background-size:cover; background-position:center center; width:100}
-.content .page .page1 .img_bg1{background-image:url(../images/headbg.png);}
-.content .page .page1 .img_bg2{background-image:url(../images/home3.jpg);}
-.content .page .page1 .img_bg3{background-image:url(../images/home2.jpg);}
-.content .page .page1 .img_bg4{background-image:url(../images/home1.jpg);}
+.content .page .button{position:absolute;top:50%; margin-top:-23px; width:30px;height:46px;background:url(../images/themes.png) no-repeat; cursor:pointer; z-index:9}
+.content .page .button:hover{ background-color:#ccc;}
+.content .page .btn_next{ background-position:-30px 0;right:50px;}
+.content .page .btn_prev{ background-position:0 0;left:50px;}
+.content .page .page1 li{float: left;height:100%; width:100%;}
+.content .page .page1 img{}
 .content .page .row_bottom{position:absolute; left:0; bottom:0; width:100%; height:4px}
 .content .page .row_bottom li{float:left;width:100%; background:white; height:4px;}
-.content .page .row_bottom li span{display:block; height:4px; background:#03F; width:0;}
+.content .page .row_bottom li span{display:block; height:4px; background:#fe8f35; width:0;}
+
+/*******page2**********/
+.content .page2{position:relative; width:900px; height:600px; background:url(../images/bg.png) no-repeat; margin:80px auto; overflow:hidden;}
+.page2 .page_0{ position:absolute; left:50px; top:23px; width:400px; height:500px; background:url(../images/home1.jpg) no-repeat;}
+.page2 .page_2{ position:absolute; right:50px; top:23px; width:400px; height:500px; background:url(../images/home3.jpg) right center no-repeat;}
+.page2 .page_1{position:absolute; right:50px; top:23px; width:400px; height:500px; z-index:4;
+/*transition:1s all ease;*/
+transform:perspective(800px) rotateY(0deg);
+transform-origin:left center;
+transform-style:preserve-3d;}
+.page2 .page_1 div{ position:absolute; right:0; top:0;width:100%; height:100%; text-align:center; font-size:40px;}
+.page2 .page_1 div.front{ background:url(../images/home1.jpg) right center no-repeat; transform:translateZ(1px); z-index:2;} 
+.page2 .page_1 div.back{ background:url(../images/home2.jpg) no-repeat; transform:translateZ(-1px) scale(-1,1); z-index:1;}   
+/*.page2:active .page_1{transform:perspective(800px) rotateY(-180deg);}*/
 
 
-  <!--page 2 的页面-->
-  
-.page .page3_bg{width:100%; height:667px; background:#FF0;}
-.page3_bg .works{width:900px; height:460px; background:#fff; padding-top:130px; margin-left:230px;}
-.page3_bg .works li{float:left; position:relative; width:200px; height:200px; background:#ccc; margin:20px 0 0 20px; overflow:hidden;}
-.page3_bg .works li span{ position:absolute; top:0; left:-200px;width:200px; height:200px; background:#90F; opacity:0.4;}
-  
 
 
-/*************左侧的显示图**************/
-.page .page3{}
-.page3 .left_side{ position:relative;float:left;width:80%; height:480px; margin-top:100px; border-bottom:20px solid pink; border-top:20px solid pink; background:pink; overflow:hidden;}
+/*************page3 右侧的显示图**************/
+.content .page3{width:87%; height:100%; margin:0 auto; background:url(../images/page3_bg.jpg) repeat-x;}
+.page3 .left_side{ position:relative;float:left;width:87%; height:480px; margin-top:100px; border-bottom:20px solid #b4b4b4; border-top:20px solid #b4b4b4; background:#b4b4b4; overflow:hidden;}
 .page3 .left_side .left_box{ position:absolute; left:20px; top:0;width:96%; background:#fff;}
 .page3 .left_side .left_box .list{ position:relative; float:left; width:100%; height:480px; overflow:hidden;}
 
@@ -107,19 +133,34 @@ body{}
 .left_side .left_box .list .darg_box li{float:left; position:relative;width:260px;height:179px;}
 .left_side .left_box .list .darg_box li img{width:260px;height:179px; position:absolute;left:0;top:0;}
 
+/**********随机换一换************/
+.page3 .left_side .list .moveing{width:720px; height: 680px; position: absolute;left:50%;top:50%;margin-left: -320px;margin-top: -240px;}
+.left_side .list .moveing li{float: left;width:150px;height: 150px;margin:0 30px 10px 0;}
+.left_side .list .moveing li img{width:150px;height:150px;}
+.left_side .list .bd{border:4px dashed red;}
+.left_side .list .combtn{ position:absolute;width:60px;height:60px;border-radius:10px; background:#C93; text-align:center; line-height:60px; font-size:18px; font-weight:bold; color:#fff; cursor:pointer; z-index:99;       border:3px solid #ccc; box-shadow:inset 0px 0px 5px #C93,0px 10px 60px rgba(245,205,97,0.7); z-index:3; transition:1s all ease}
+.left_side .list .change{left:5%; top:210px;}
+.left_side .list .nextPage{left:90%;top:210px;}
+.left_side .list .combtn:hover{transform:rotate(360deg) scale(1.1);border-radius: 50%;}
 
-/**********瀑布流************/
+
+
+
+
+
 
 /*********右侧的导航**********/
 
-.page3 .right_side{ float:left;width:18%; height:500px; margin-top:100px; text-align:center;}
-.page3 .right_side li{ float:left;width:100%; height:64px; overflow:hidden;}
-.page3 .right_side li .icon_btn { float:left;position: relative;left:0;top: 0; width: 150px;height: 50px;line-height: 50px;color: #000;font-weight: bold;font-size: 18px;background: #FFF;
+.page3 .right_side{ float:right;width:13%; height:500px; margin-top:100px; text-align:center;}
+.page3 .right_side li{ float:left;width:100%; height:94px; overflow:hidden;}
+.page3 .right_side li .icon_btn{ float:left;position: relative;left:0;top: 0; width: 150px;height: 50px;line-height: 50px;color: #000;font-weight: bold;font-size: 18px;background: #ffe6d9;
   transition: all 0.4s ease;
   -moz-transition: all 0.4s ease;
   -o-transition: all 0.4s ease;
   -webkie-transition: all 0.4s ease;
 }
+.page3 .right_side li .icon_btn:hover{color:#fff;}
+.page3 .right_side li .icon_btn.active{color:#fff; border:1px solid #ff7c12; background:rgba(0,0,0,0);}
 .page3 .right_side li .icon_btn .line {position: absolute;background: none;
   transition: 0.4s ease;
   -moz-transition: 0.4s ease;
@@ -153,23 +194,141 @@ body{}
  
 }
 .page3 .right_side li .icon_btn:hover .line {
-  background: #70e3ea;
+  background: #ff7c12;
+}
+
+
+
+
+<!--page 4 的页面-->
+.content .page_4{ position:relative; width:100%; height:100%}
+#page4{position:relative;width:500px; height:400px; margin:120px auto;}
+#page4 li{ position:absolute;left:0;top:0; opacity:0; display:none;width:100%; height:100%; overflow:hidden;
+transform: perspective(800px) translateX(0)  rotateY(0deg) ;
+transition:1s all ease;
+}
+#page4 li img{width:500px; height:400px;}
+#page4 li span{ position:absolute; left:0; bottom:-150px; width:496px; border:2px solid #ff7c12; height:146px; font-size:40px; line-height:150px;text-align:center; background:rgba(196,188,188,0.7); box-shadow:2px 2px 1px rgba(255,124,18) ;}
+#page4 li.l2{ display:block;
+transform: perspective(800px) translateX(-300px)  rotateY(45deg) ; z-index:1;}
+#page4 li.l1{ display:block; opacity:1; 
+transform: perspective(800px) translateX(-200px)  rotateY(45deg) ; z-index:2;}
+#page4 li.cur{ display:block; opacity:1; z-index:5;}
+#page4 li.r1{ display:block; opacity:1; 
+transform: perspective(800px) translateX(200px)  rotateY(-45deg) ;z-index:2;}
+#page4 li.r2{ display:block;
+transform: perspective(800px) translateX(300px)  rotateY(-45deg) ;z-index:1;}
+.page_4 input{ position:absolute;width:60px;height:60px;border-radius:10px; background:#C93; text-align:center; line-height:60px; font-size:18px; font-weight:bold; color:#fff; cursor:pointer; z-index:99;       border:3px solid #ccc; box-shadow:inset 0px 0px 5px #C93,0px 10px 60px rgba(245,205,97,0.7); z-index:3; transition:1s all ease}
+.page_4 #next{left:90%;top:210px;}
+.page_4 #prev{left:5%; top:210px;}
+
+  <!--page 5 的页面-->
+  
+.page .page3_bg{width:100%; height:667px; background:#FF0;}
+.page3_bg .works{width:900px; height:460px; background:#fff; padding-top:130px; margin-left:230px;}
+.page3_bg .works li{float:left; position:relative; width:200px; height:200px; background:#ccc; margin:20px 0 0 20px; overflow:hidden;}
+.page3_bg .works li span{ position:absolute; top:0; left:-200px;width:200px; height:200px; background:#90F; opacity:0.4;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/****page6******/
+.content .page6{}
+.page6 .gradient{border: 5px solid #000; box-shadow: inset 5px 5px 10px black;
+width:400px; height:48px;/*height:230px*/ position:absolute; top:120px;/*top:190px*/ left:30%; margin-left:-200px; opacity:1;box-shadow: rgba(255, 255, 255,0.7) 0px 30px 80px; transition:0.7s all ease; transform:rotate(0deg); overflow:hidden;}
+.page6 .gradient h2{position:relative; height:48px; z-index:2; padding-left:49px;height:48px; font-size:20px; line-height:48px; font-family:"kaiti"; color:#fff; background:url(../images/information.png) no-repeat;}
+.page6 .gradient h2 .move{ position:absolute; right:20px; top:15px; width:0; height:0; border-left:14px solid transparent;border-right:14px solid transparent;border-top:14px solid #000;}
+
+.page6 .gradient h2:hover{ box-shadow:0px 20px 40px rgba(45, 45, 45, 0.5);}
+.page6 .gradient ul{ position:relative;width: 100%;height: 100%;}
+.page6 .gradient ul li{ position:absolute; left:-400px;opacity:1; height:40px; width:100%;margin-top: 10px;  text-align: center; color: #fff; font-size: 20px;}
+
+
+/****旋转的正方体*****/
+.page6 .square{position:absolute; right:250px; top:200px;width:250px;height:250px;
+    -webkit-transform:perspective(1000px) rotateX(30deg) rotateY(30deg); 
+    -moz-transform:perspective(1000px) rotateX(30deg) rotateY(30deg); 
+    transform:perspective(1000px) rotateX(30deg) rotateY(30deg); 
+    -webkit-transform-style:preserve-3d;
+    -moz-transform-style:preserve-3d;
+    transform-style:preserve-3d;}
+.page6 .square div{
+    opacity: 0.7; width: 250px; height: 250px; position: absolute; left: 0 ; top: 0;
+    font-size:40px;line-height:250px;text-align:center;
+    color: #fff;
+}
+.page6 .square span{
+    width: 150px; height: 150px;  position: absolute; left: 50%; top: 50%;
+    margin-top: -75px; margin-left: -75px; opacity: 0.9;
+}
+.s_front{
+    transform:translateZ(75px); background: #c95;
+    background:url(../images/erweima.png);
+}
+.s_back{
+    transform:scale(1,-1) translateZ(-75px); background: #97c;
+    background:url(../images/erweima1.png);
+}
+.s_left{
+    background: #930;
+    transform: rotateY(-90deg) translateZ(75px);
+    background:url(../images/erweima2.png);
+}
+.s_right{
+    background: #91c;
+    transform: rotateY(90deg) translateZ(75px);
+    background:url(../images/erweima3.png);
+}
+.s_top{
+    background: #7c9;
+    transform: rotateX(90deg) translateZ(75px);
+    background:url(../images/erweima4.png);
+}
+.s_bottom{
+    background: #27c;
+    transform:rotateX(-90deg) translateZ(75px);
+    background:url(../images/erweima5.png);
+}
+.z_front{
+    transform:translateZ(125px); background: #c95;
+}
+.z_back{
+    transform:scale(1,-1) translateZ(-125px); background: #97c;
+}
+.z_left{
+    background: #930;
+    transform: rotateY(-90deg) translateZ(125px);
+}
+.z_right{
+    background: #91c;
+    transform: rotateY(90deg) translateZ(125px)
+}
+.z_top{
+    background: #7c9;
+    transform: rotateX(90deg) translateZ(125px);
+}
+.z_bottom{
+    background: #27c;
+    transform:rotateX(-90deg) translateZ(125px);
 }
 
 
 
 
 
-.page4{width:100%; background:#3FC;}
-
-.page5{width:100%; background:#00F;}
-.page5 .moveing{width:680px; height: 680px; position: absolute;left:50%;top:50%;margin-left: -340px;margin-top: -250px;}
-.page5 .moveing li{float: left;width:150px;height: 150px;margin:0 20px 20px 0;}
-.page5 .moveing li img{width:150px;height:150px;}
-.bd{border:4px dashed red;}
-.page5 div{ position:absolute;width:70px;height:30px; border-radius:10%; background:url(../images/nav_bg.png) no-repeat; text-align:center; line-height:30px; font-size:16px; font-weight:bold; color:#fff; cursor:pointer; z-index:99;}
-.page5 div.change{left:40%; bottom:50px;}
-.page5 div.nextpage{left:50%; bottom:50px;}
 
 
 
@@ -180,11 +339,3 @@ body{}
 
 
 
-
-
-
-
-
-
-
-.page6{width:100%; background:#0FF;}
