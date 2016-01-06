@@ -66,16 +66,16 @@ body{}
 
 /*******page2**********/
 .content .page2{position:relative; width:900px; height:600px; background:url(../images/bg.png) no-repeat; margin:80px auto; overflow:hidden;}
-.page2 .page_0{ position:absolute; left:50px; top:23px; width:400px; height:500px; background:url(../images/home1.jpg) no-repeat;}
-.page2 .page_2{ position:absolute; right:50px; top:23px; width:400px; height:500px; background:url(../images/home3.jpg) right center no-repeat;}
+.page2 .page_0{ position:absolute; left:50px; top:23px; width:400px; height:500px; background:url(../images/book.jpg) no-repeat;}
+.page2 .page_2{ position:absolute; right:50px; top:23px; width:400px; height:500px; background:url(../images/book1.jpg) right center no-repeat;}
 .page2 .page_1{position:absolute; right:50px; top:23px; width:400px; height:500px; z-index:4;
 /*transition:1s all ease;*/
 transform:perspective(800px) rotateY(0deg);
 transform-origin:left center;
 transform-style:preserve-3d;}
 .page2 .page_1 div{ position:absolute; right:0; top:0;width:100%; height:100%; text-align:center; font-size:40px;}
-.page2 .page_1 div.front{ background:url(../images/home1.jpg) right center no-repeat; transform:translateZ(1px); z-index:2;} 
-.page2 .page_1 div.back{ background:url(../images/home2.jpg) no-repeat; transform:translateZ(-1px) scale(-1,1); z-index:1;}   
+.page2 .page_1 div.front{ background:url(../images/book.jpg) right center no-repeat; transform:translateZ(1px); z-index:2;} 
+.page2 .page_1 div.back{ background:url(../images/book1.jpg) no-repeat; transform:translateZ(-1px) scale(-1,1); z-index:1;}   
 /*.page2:active .page_1{transform:perspective(800px) rotateY(-180deg);}*/
 
 
@@ -138,7 +138,7 @@ transform-style:preserve-3d;}
 .left_side .list .moveing li{float: left;width:150px;height: 150px;margin:0 30px 10px 0;}
 .left_side .list .moveing li img{width:150px;height:150px;}
 .left_side .list .bd{border:4px dashed red;}
-.left_side .list .combtn{ position:absolute;width:60px;height:60px;border-radius:10px; background:#C93; text-align:center; line-height:60px; font-size:18px; font-weight:bold; color:#fff; cursor:pointer; z-index:99;       border:3px solid #ccc; box-shadow:inset 0px 0px 5px #C93,0px 10px 60px rgba(245,205,97,0.7); z-index:3; transition:1s all ease}
+.left_side .list .combtn{ position:absolute;width:60px;height:60px;border-radius:10px; background:#C93; text-align:center; line-height:60px; font-size:18px; font-weight:bold; color:#fff; cursor:pointer; z-index:11;border:3px solid #ccc; box-shadow:inset 0px 0px 5px #C93,0px 10px 60px rgba(245,205,97,0.7); z-index:3; transition:1s all ease}
 .left_side .list .change{left:5%; top:210px;}
 .left_side .list .nextPage{left:90%;top:210px;}
 .left_side .list .combtn:hover{transform:rotate(360deg) scale(1.1);border-radius: 50%;}
@@ -208,7 +208,7 @@ transform: perspective(800px) translateX(0)  rotateY(0deg) ;
 transition:1s all ease;
 }
 #page4 li img{width:500px; height:400px;}
-#page4 li span{ position:absolute; left:0; bottom:-150px; width:496px; border:2px solid #ff7c12; height:146px; font-size:40px; line-height:150px;text-align:center; background:rgba(196,188,188,0.7); box-shadow:2px 2px 1px rgba(255,124,18) ;}
+#page4 li span{ position:absolute; left:0; bottom:-150px; width:496px; border:2px solid #ff7c12; height:146px; font-size:40px; line-height:150px;text-align:center; background:rgba(196,188,188,0.7); color:red;}
 #page4 li.l2{ display:block;
 transform: perspective(800px) translateX(-300px)  rotateY(45deg) ; z-index:1;}
 #page4 li.l1{ display:block; opacity:1; 
@@ -227,8 +227,8 @@ transform: perspective(800px) translateX(300px)  rotateY(-45deg) ;z-index:1;}
 .page .page3_bg{width:100%; height:667px; background:#FF0;}
 .page3_bg .works{width:900px; height:460px; background:#fff; padding-top:130px; margin-left:230px;}
 .page3_bg .works li{float:left; position:relative; width:200px; height:200px; background:#ccc; margin:20px 0 0 20px; overflow:hidden;}
-.page3_bg .works li span{ position:absolute; top:0; left:-200px;width:200px; height:200px; background:#90F; opacity:0.4;}
-
+.page3_bg .works li span{ position:absolute; top:0; left:-200px;width:200px; height:200px; background:#000; opacity:0.6;}
+.page3_bg .works li img{ width:100%; height:100%;}
 
 
 
@@ -290,12 +290,12 @@ width:400px; height:48px;/*height:230px*/ position:absolute; top:120px;/*top:190
 .s_right{
     background: #91c;
     transform: rotateY(90deg) translateZ(75px);
-    background:url(../images/erweima3.png);
+    background:url(../images/erweima6.png);
 }
 .s_top{
     background: #7c9;
     transform: rotateX(90deg) translateZ(75px);
-    background:url(../images/erweima4.png);
+    background:url(../images/erweima6.png);
 }
 .s_bottom{
     background: #27c;

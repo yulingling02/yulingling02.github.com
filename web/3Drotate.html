@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>3Drotate</title>
+<style>
+*{margin:0;padding:0;list-style:none;}
+body{ background:#000;}
+a{ position:absolute;right:100px; bottom:50px;width:60px;height:60px;border-radius:10px; background:#C93; text-align:center; line-height:60px; font-size:18px; font-weight:bold; color:#fff; cursor:pointer; z-index:11;border:3px solid #ccc; box-shadow:inset 0px 0px 5px #C93; z-index:3; transition:1s all ease}
+a:hover{transform:rotate(360deg) scale(1.1);border-radius: 50%;}
+#ul1{ position:absolute;left:50%;top:50%; margin-left:-66px; margin-top:-100px;width:133px; height:200px; transform:perspective(800px) rotateX(-15deg) rotateY(0deg) ; transform-style:preserve-3d;}
+#ul1 li{position:absolute;left:0;top:0;width:100%; height:100%;
+
+ transform:rotateY(0deg)  translateZ(0px);
+ transition:1s all ease; 
+ border-radius:10px;
+ box-shadow:0 0 5px 2px #fff;
+ overflow:hidden;
+}
+#ul1 li img{width:100%; height:100%;}
+</style>
+<script>
+window.onload = function(){
+	
+	var oUl = document.getElementById("ul1");
+	var aLi = oUl.children;
+	var len = aLi.length;	
+	
+	
+	var speedX = 0;
+	var speedY = 0;
+	var lastX = 0;
+	var lastY = 0;
+
+	
+	var i = len - 1;
+	var timer = setInterval(function(){
+		
+		aLi[i].style.transform = "rotateY("+360/len*i+"deg)  translateZ(300px)";
+		i--;
+		if(i < 0){
+			clearInterval(timer);
+		}
+	},300);
+	
+	
+	var bLeft = bRight = bTop = bBottom = false;
+	
+	var x = 150;//上下 rotateX
+	var y = 0;//左右 rotateY
+	
+	oUl.onmousedown = function(ev){ 
+		var disX = ev.clientX - y;
+		var disY = ev.clientY - x;
+		document.onmousemove = function(ev){
+			y = ev.clientX - disX;
+			x = ev.clientY - disY;
+			
+			if(x > 600){// 60
+				x = 600;
+			} else if(x < -600) {// -60
+				x = -600;
+			}
+			
+			oUl.style.transform = "perspective(800px)  rotateX("+-x/10+"deg)  rotateY("+y/10+"deg)";
+			
+			
+			speedX = x - lastX;
+			speedY = y - lastY;
+			lastX = x;
+			lastY = y;
+			
+		};
+		document.onmouseup = function(){
+			document.onmousemove = null;
+			document.onmouseup = null;
+			
+			clearInterval(timer);
+			timer = setInterval(function(){
+				
+				x += speedX;
+				y += speedY;
+				
+				speedX *= 0.8;
+				speedY *= 0.8;
+				
+				if(x > 600){// 60
+					x = 600;
+				} else if(x < -600) {// -60
+					x = -600;
+				}
+				
+				//关定时器
+				if(Math.abs(speedX) < 1){
+					speedX = 0;
+				}
+				if(Math.abs(speedY) < 1){
+					speedY = 0;
+				}
+				
+				if(speedX == 0 && speedY == 0){
+					clearInterval(timer);
+					//alert("over");
+				}
+				
+				oUl.style.transform = "perspective(800px)  rotateX("+-x/10+"deg)  rotateY("+y/10+"deg)";
+				
+				
+			},30);
+			
+		};
+		return false;
+	};
+	
+};
+</script>
+</head>
+
+<body>
+<a href="../index.html#page4">返回</a>
+<ul id="ul1">
+	<li><img src="../images/0.jpg"/></li>
+	<li><img src="../images/2.jpg" /></li>
+	<li><img src="../images/3.jpg" /></li>
+	<li><img src="../images/4.jpg" /></li>
+	<li><img src="../images/5.jpg" /></li>
+	<li><img src="../images/6.jpg" /></li>
+	<li><img src="../images/7.jpg" /></li>
+	<li><img src="../images/8.jpg" /></li>
+	<li><img src="../images/9.jpg" /></li>
+	<li><img src="../images/10.jpg" /></li>
+	<li><img src="../images/1.jpg" /></li>
+</ul>
+</body>
+</html>
